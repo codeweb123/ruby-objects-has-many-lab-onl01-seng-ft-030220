@@ -1,34 +1,30 @@
+require 'pry'
 class Author
-
   attr_accessor :name, :posts
 
-  @@post_count = 0
+  @@posts_count = 0
 
   def initialize(name)
     @name = name
-    @posts = []
   end
 
   def posts
-    Author.all.select do |post|
+    Post.all.select do |post|
       author.post == self
   end
 end
 
   def add_post(post)
-    @posts << post
-    post.author = self
-    @@post_count += 1
+    post.author = self #author instance
   end
 
-  def add_post_by_title(title)
-    post = Post.new(title)
-    @posts << post
-    post.author = self
-    @@post_count += 1
+  def add_post_by_name(title)
+    post = Author.new(title)
+    add_post(post)
   end
 
-  def self.song_count
+  def self.post_count
     Author.all.count
   end
+
 end
