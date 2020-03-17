@@ -22,7 +22,7 @@ end
     post = Author.new(title)
     add_post(post)
   end
-
+  
   def self.post_count
     Author.all.count
   end
