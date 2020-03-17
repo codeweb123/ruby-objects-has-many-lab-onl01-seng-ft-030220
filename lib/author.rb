@@ -24,6 +24,6 @@ end
   end
 
   def self.post_count
-    Author.all.count
+    Post.all.count
   end
 end
