@@ -8,11 +8,20 @@ class Author
     @name = name
   end
 
+  def songs
+    Song.all.select do |song|
+      song.artist == self
+  end
+  end
+
+
   def posts
     Post.all.select do |post|
-      author.post == self
+      post.author == self
   end
 end
+
+
 
   def add_post(post)
     post.author = self #author instance
