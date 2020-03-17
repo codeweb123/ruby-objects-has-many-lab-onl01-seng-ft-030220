@@ -1,6 +1,6 @@
 require 'pry'
 class Author
-  attr_accessor :title, :posts
+  attr_accessor :title, :posts, :name
 
   @@posts_count = 0
 
